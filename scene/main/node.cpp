@@ -222,6 +222,7 @@ void Node::_notification(int p_notification) {
 				set_physics_process(true);
 			}
 
+			GDVIRTUAL_CALL(_before_ready);
 			GDVIRTUAL_CALL(_ready);
 		} break;
 
@@ -3872,6 +3873,7 @@ void Node::_bind_methods() {
 	GDVIRTUAL_BIND(_enter_tree);
 	GDVIRTUAL_BIND(_exit_tree);
 	GDVIRTUAL_BIND(_ready);
+	GDVIRTUAL_BIND(_before_ready);
 	GDVIRTUAL_BIND(_get_configuration_warnings);
 	GDVIRTUAL_BIND(_input, "event");
 	GDVIRTUAL_BIND(_shortcut_input, "event");
